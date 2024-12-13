@@ -1,15 +1,12 @@
-
-    // Subclass for inventory items
+// Subclass for inventory items
 class InventoryItem extends Record {
     private int quantity;
     private double unitPrice;
-    private double totalProfit;
 
     public InventoryItem(String description, int quantity, double unitPrice) {
         super(description);
         this.quantity = quantity;
         this.unitPrice = unitPrice;
-        this.totalProfit = 0.0;
     }
 
     public int getQuantity() {
@@ -32,16 +29,8 @@ class InventoryItem extends Record {
         return unitPrice * 1.1; // 10% markup
     }
 
-    public void addProfit(double profit) {
-        this.totalProfit += profit;
-    }
-
-    public double getTotalProfit() {
-        return totalProfit;
-    }
-
     @Override
     public String toString() {
-        return "Item: " + description + ", Quantity: " + quantity + ", Unit Price: Rp" + unitPrice + ", Total Value: Rp" + getTotalValue() + ", Total Profit: Rp" + totalProfit;
+        return "Item: " + description + ", Quantity: " + quantity + ", Unit Price: Rp" + unitPrice + ", Total Value: Rp" + getTotalValue();
     }
 }
